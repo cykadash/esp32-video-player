@@ -2,7 +2,7 @@
 
 This firmware plays a video on an ILI9341 TFT display. The firmware is in C and uses ESP-IDF. The display and an SD card use the same SPI bus. I tested the firmware in the [Wokwi](https://wokwi.com) simulator only.
 
-**[Run it in Wokwi](https://wokwi.com/projects/460837331192857601)**
+**[Run it in Wokwi](https://wokwi.com/projects/478064516305716225)**
 
 ## Function
 
