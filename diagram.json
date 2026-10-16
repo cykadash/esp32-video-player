@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 275.27,
+      "left": -26.72,
+      "rotate": 90,
+      "attrs": { "builder": "esp-idf" }
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": -16.9,
+      "left": -359.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-microsd-card",
+      "id": "sd1",
+      "top": 239.57,
+      "left": 292.33,
+      "rotate": 180,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VCC", "esp:3V3.1", "red", [ "h0" ] ],
+    [ "lcd1:LED", "esp:3V3.2", "green", [ "h0" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "lcd1:MOSI", "esp:11", "green", [ "h0" ] ],
+    [ "lcd1:MISO", "esp:13", "green", [ "h0" ] ],
+    [ "lcd1:CS", "esp:10", "green", [ "h0" ] ],
+    [ "lcd1:D/C", "esp:8", "green", [ "h0" ] ],
+    [ "lcd1:RST", "esp:9", "green", [ "h0" ] ],
+    [ "lcd1:SCK", "esp:12", "green", [ "h0" ] ],
+    [ "esp:3V3.1", "sd1:VCC", "green", [ "v0" ] ],
+    [ "esp:GND.1", "sd1:GND", "black", [ "v0" ] ],
+    [ "esp:11", "sd1:DI", "green", [ "v0" ] ],
+    [ "esp:13", "sd1:DO", "green", [ "v0" ] ],
+    [ "esp:12", "sd1:SCK", "green", [ "v0" ] ],
+    [ "esp:4", "sd1:CS", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
